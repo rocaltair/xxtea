@@ -1,7 +1,7 @@
 #include "xxtea.h"
 #define DELTA 0x9e3779b9
 #define MX(e, y, z, k, p, sum) (((z>>5^y<<2) + (y>>3^z<<4)) ^ ((sum^y) + (k[(p&3)^e] ^ z)))
-#define ALIGN(n, a) ((n & (a-1)) == 0) ? n : (n + a - (n & (a-1)))
+#define ALIGN(n, a) (((n) & (a-1)) == 0) ? (n) : ((n) + a - ((n) & (a-1)))
 
 #define DEFAULT_BUFF_ARRAY_SIZE 256 * 1024 /*256 KB*/
 static unsigned char default_buff_array[DEFAULT_BUFF_ARRAY_SIZE];
